@@ -2,10 +2,13 @@
   "name": "monorepo-module-federation",
   "version": "1.0.0",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "startAll": "concurrently \"npm run start -w host\" \"npm run start -w admin\" \"npm run start -w shop\" "
   },
   "workspaces": [
     "packages/*",
     "services/*"
-  ]
+  ],
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
 }
